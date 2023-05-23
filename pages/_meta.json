@@ -1,7 +1,7 @@
 {
   "index": "Introduction",
-  "another": "Another Page",
-  "advanced": "Advanced (A Folder)",
+  "installation": "Installation",
+  "application": "Cell Geometry",
   "about": {
     "title": "About",
     "type": "page"

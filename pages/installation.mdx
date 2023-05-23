@@ -1,26 +1,74 @@
 # ⚙️ Installation
 
+
+## 🐳 Docker Installation (Recommended)
+
+To install and set up the Streamlit app using Docker, follow these steps:
+
+import { Steps } from 'nextra-theme-docs'
+ 
+<Steps>
+
+### Step 1
+
+Pull the Docker image from GitHub Container Registry:
+
+   ```bash copy 
+   docker pull ghcr.io/bioshape-lab/cells:main
+   ```
+
+
+### Step 2
+
+Run the Docker image:
+
+   ```bash copy
+   docker run --rm --name streamlit -p 8501:8501 ghcr.io/bioshape-lab/cells:main
+   ```
+
+   The Streamlit app should now be running locally. Open your web browser and visit `http://localhost:8501` to access the app.
+
+
+
+</Steps>
+
+
+## 🐍 Local Installation
+
 To install and set up the Streamlit app, follow these steps:
 
-1. Clone the repository:
+
+import { Steps } from 'nextra-theme-docs'
+ 
+<Steps>
+ 
+### Step 1
+ 
+Clone the repository:
 
    ```bash copy 
    gh repo clone bioshape-lab/cells
    ```
-
-2. Navigate to the project directory:
+ 
+### Step 2
+ 
+Navigate to the project directory:
 
    ```bash copy
    cd cells/cells/streamlit
    ```
 
-3. Create a virtual environment (optional but recommended):
+### Step 3
+
+Create a virtual environment (optional but recommended):
 
    ```bash copy
    python -m venv env
    ```
 
-4. Activate the virtual environment:
+### Step 4
+
+Activate the virtual environment:
 
    - For Windows:
 
@@ -34,7 +82,9 @@ To install and set up the Streamlit app, follow these steps:
      source env/bin/activate
      ```
 
-5. Install project dependencies using Poetry:
+### Step 5
+
+Install project dependencies using Poetry:
 
    ```bash copy
    poetry install
@@ -42,7 +92,10 @@ To install and set up the Streamlit app, follow these steps:
 
    This command reads the `pyproject.toml` file, resolves dependencies, and installs them into the virtual environment.
 
-6. Run the Streamlit app:
+
+### Step 6
+
+Run the Streamlit app:
 
    ```bash copy
    streamlit run Hello.py
@@ -50,8 +103,11 @@ To install and set up the Streamlit app, follow these steps:
 
    The Streamlit app should now be running locally. Open your web browser and visit `http://localhost:8501` to access the app.
 
-> __Note:__ Make sure you have Python and Poetry installed on your machine before following these steps. The `pyproject.yaml` file should contain the necessary dependencies and their versions, enabling Poetry to manage the installation process effectively.
+
+ 
+</Steps>
 
 
-## Docker Installation
+
+
 
