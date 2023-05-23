@@ -2,16 +2,16 @@ import React from 'react'
 import { DocsThemeConfig } from 'nextra-theme-docs'
 
 const config: DocsThemeConfig = {
-  logo: <span>My Project</span>,
+  logo: <span>Cell Geometry</span>,
   project: {
-    link: 'https://github.com/shuding/nextra-docs-template',
+    link: 'https://github.com/bioshape-lab/cells',
   },
   chat: {
     link: 'https://discord.com',
   },
-  docsRepositoryBase: 'https://github.com/shuding/nextra-docs-template',
+  docsRepositoryBase: 'https://documentation-starter-kit-amilworks.vercel.app/',
   footer: {
-    text: 'Nextra Docs Template',
+    text: 'Cell Geometry | UCSB Electrical & Computer Engineering',
   },
 }
 
