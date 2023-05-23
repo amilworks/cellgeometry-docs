@@ -1,11 +1,74 @@
 # Introduction
  
-Welcome to Nextra! This is a basic docs template. You can use it as a starting point for your own project :)
+## 📝 Project Description 
 
-## What is Nextra?
+This project focuses on the analysis and comparison of biological cell shapes using elastic metrics implemented in Geomstats. The shapes of biological cells are determined by various processes and biophysical forces, which play a crucial role in cellular functions. By utilizing quantitative measures that reflect cellular morphology, this project aims to leverage large-scale biological cell image data for morphological studies.
 
-A **simple**, **powerful** and **flexible** site generation framework with everything you love from Next.js.
+The analysis of cell shapes has significant applications in various domains. One notable application is the accurate classification and discrimination of cancer cell lines treated with different drugs. Measures of irregularity and spreading of cells can provide valuable insights for understanding the effects of drug treatments.
 
-## Documentation
+## 🎯 Features
 
-The documentation is available at [https://nextra.site](https://nextra.site).
+- Quantitative analysis and comparison of biological cell shapes using Geomstats.
+- Utilization of elastic metrics implemented in Geomstats for shape analysis.
+- Calculation of measures reflecting cellular morphology, facilitating in-depth characterization of cell shapes.
+- Leveraging large-scale biological cell image data for comprehensive morphological studies.
+- Framework for optimal matching, deforming, and comparing cell shapes using geodesics and geodesic distances.
+- Visualization of cellular shape variations, aiding in the interpretation and communication of analysis results.
+- User-friendly Streamlit app interface for seamless analysis, visualization, and interaction with biological cell data.
+- Comprehensive set of tools and methods, empowering researchers and scientists in cellular biology to gain insights and make discoveries.
+
+
+## ⚙️ Installation
+
+To install and set up the Streamlit app, follow these steps:
+
+1. Clone the repository:
+
+   ```bash
+   gh repo clone bioshape-lab/cells
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd cells/cells/streamlit
+   ```
+
+3. Create a virtual environment (optional but recommended):
+
+   ```bash
+   python -m venv env
+   ```
+
+4. Activate the virtual environment:
+
+   - For Windows:
+
+     ```bash
+     .\env\Scripts\activate
+     ```
+
+   - For macOS and Linux:
+
+     ```bash
+     source env/bin/activate
+     ```
+
+5. Install project dependencies using Poetry:
+
+   ```bash
+   poetry install
+   ```
+
+   This command reads the `pyproject.toml` file, resolves dependencies, and installs them into the virtual environment.
+
+6. Run the Streamlit app:
+
+   ```bash
+   streamlit run Hello.py
+   ```
+
+   The Streamlit app should now be running locally. Open your web browser and visit `http://localhost:8501` to access the app.
+
+> __Note:__ Make sure you have Python and Poetry installed on your machine before following these steps. The `pyproject.yaml` file should contain the necessary dependencies and their versions, enabling Poetry to manage the installation process effectively.
+
