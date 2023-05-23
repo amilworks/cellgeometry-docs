@@ -1,0 +1,57 @@
+# ⚙️ Installation
+
+To install and set up the Streamlit app, follow these steps:
+
+1. Clone the repository:
+
+   ```bash copy 
+   gh repo clone bioshape-lab/cells
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash copy
+   cd cells/cells/streamlit
+   ```
+
+3. Create a virtual environment (optional but recommended):
+
+   ```bash copy
+   python -m venv env
+   ```
+
+4. Activate the virtual environment:
+
+   - For Windows:
+
+     ```bash copy
+     .\env\Scripts\activate
+     ```
+
+   - For macOS and Linux:
+
+     ```bash copy
+     source env/bin/activate
+     ```
+
+5. Install project dependencies using Poetry:
+
+   ```bash copy
+   poetry install
+   ```
+
+   This command reads the `pyproject.toml` file, resolves dependencies, and installs them into the virtual environment.
+
+6. Run the Streamlit app:
+
+   ```bash copy
+   streamlit run Hello.py
+   ```
+
+   The Streamlit app should now be running locally. Open your web browser and visit `http://localhost:8501` to access the app.
+
+> __Note:__ Make sure you have Python and Poetry installed on your machine before following these steps. The `pyproject.yaml` file should contain the necessary dependencies and their versions, enabling Poetry to manage the installation process effectively.
+
+
+## Docker Installation
+
