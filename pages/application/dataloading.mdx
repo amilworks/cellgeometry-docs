@@ -1,0 +1,129 @@
+# Loading Data
+
+
+## Data Organization Guidelines 
+
+### XY-Coordinate Data (.txt/.csv)
+
+   When organizing xy-coordinate data for your streamlit app, you should follow these guidelines:
+
+   - Each data file should be in either .txt or .csv format.
+   - The file should contain two columns representing the `x` and `y` coordinates.
+   - The first row should be a header row with column names.
+   - Each subsequent row should represent a data point with its corresponding `x` and `y` values.
+
+   Example:
+   ```bash
+   x,y
+   10,20
+   15,25
+   30,40
+   ...
+   ```
+
+   You can have multiple xy-coordinate data files, and you can upload any of these files all at once.
+
+### **ROI Format from Fiji (Zipped)**
+
+   When working with ROI data from Fiji, which is typically stored in a zipped format, you should follow these guidelines:
+
+   - The ROI data should be exported from Fiji and saved as a zip file.
+   - The zip file should contain one or more ROI files in the ImageJ ROI format (typically `.roi` or `.zip` format).
+   - Each ROI file represents a separate region of interest.
+   - The file can contain multiple ROI shapes, such as points, rectangles, ellipses, etc., as Fiji supports various ROI types.
+
+   Example:
+   ```bash
+   my_roi_data.zip
+   ├── roi1.roi
+   ├── roi2.roi
+   ├── roi3.roi
+   └── ...
+   ```
+
+   The app has the functionality to accept zip files containing ROI data. Upon uploading, the app can read and extract the individual ROI files for further processing.
+
+## Uploading data to the Cell Geometry App
+
+To utilize your streamlit app effectively, follow these steps:
+
+1. Launch the streamlit app by running the appropriate command or executing the main script.
+
+2. Access the dedicated page for uploading data, which should be clearly indicated in the app's interface.
+
+3. Upload XY-coordinate data files by selecting the desired .txt or .csv files from your local machine.
+
+4. Upload ROI data files by selecting the corresponding zipped file(s) containing the ROI data exported from Fiji.
+
+5. Once the data is uploaded, the app should use the `read_roi` package in Python to read the xy-coordinate and ROI data from the uploaded files.
+
+6. Perform any necessary data processing, visualization, or analysis using the uploaded data within your streamlit app.
+
+By adhering to these data organization guidelines, users of your streamlit app will be able to seamlessly upload and utilize their xy-coordinate and ROI data for further analysis and exploration.
+
+Remember to provide clear instructions and user interface elements in your app to guide users through the process of uploading and utilizing the data effectively.
+
+Note: The provided documentation assumes that the users are familiar with the specific requirements and functionalities of your streamlit app.
+
+
+
+
+## Verifying File Formats using Jupyter Notebook
+
+To ensure that the uploaded files are correctly formatted, you can use Jupyter Notebook in conjunction with the Python programming language. Jupyter Notebook provides an interactive environment where you can write and execute code in cells.
+
+To verify the file formats, follow these steps:
+
+1. Open Jupyter Notebook on your local machine.
+
+2. Create a new notebook or open an existing one.
+
+3. Import the necessary libraries to handle file operations and data processing. For example, you may need to import the `pandas` library for working with data in .csv format and the `read_roi` package for reading the ROI files.
+
+   ```python
+   import pandas as pd
+   from read_roi import read_roi_zip
+   ```
+
+4. Load the xy-coordinate data file using `pandas` if it is in .csv format. Adjust the code according to the specific file format (.txt or .csv) you are working with.
+
+   ```python
+   # Replace 'xy_coordinates.csv' with your file path
+   df = pd.read_csv('xy_coordinates.csv')  
+   ```
+
+5. Inspect the loaded data to ensure it matches the expected format. You can display the first few rows using the `head()` function.
+
+   ```python
+   df.head()
+   ```
+
+   Check if the columns and values align with your expectations for xy-coordinate data.
+
+6. If you are dealing with zipped ROI files, use the `read_roi_zip` function from the `read_roi` package to read the ROI data.
+
+   ```python
+   # Replace 'roi_data.zip' with your file path
+   roi_data = read_roi_zip('roi_data.zip') 
+   ```
+
+   This function will return a dictionary containing the ROI data extracted from the zip file.
+
+7. Explore the `roi_data` dictionary to verify that the ROI files were correctly read. You can print the dictionary or access specific ROI shapes to examine their properties.
+
+   ```python
+   # Print the entire dictionary
+   print(roi_data)  
+
+   # Access individual ROI shapes
+   for roi_name, roi_shape in roi_data.items():
+       print(f"ROI Name: {roi_name}")
+       print(f"ROI Shape: {roi_shape}")
+   ```
+
+   Ensure that the ROI shapes and associated properties align with the expected format.
+
+8. Repeat the verification steps for each file format you support, adjusting the code as necessary.
+
+By using Jupyter Notebook to verify the file formats, you can quickly check if the uploaded files adhere to the expected structure and format. This verification step helps ensure that the app receives valid input data and provides a smoother user experience.
+
