@@ -1,10 +1,37 @@
 # Cell Geometry
 
-## 📝 Project Description 
+## Introduction
 
-This project focuses on the analysis and comparison of biological cell shapes using elastic metrics implemented in Geomstats. The shapes of biological cells are determined by various processes and biophysical forces, which play a crucial role in cellular functions. By utilizing quantitative measures that reflect cellular morphology, this project aims to leverage large-scale biological cell image data for morphological studies.
+Welcome to the documentation for our Streamlit application that utilizes the elastic metric between discrete curves from Geomstats for cell shape analysis. This documentation will provide you with an overview of the application's purpose, features, and how to use it effectively.
 
-The analysis of cell shapes has significant applications in various domains. One notable application is the accurate classification and discrimination of cancer cell lines treated with different drugs. Measures of irregularity and spreading of cells can provide valuable insights for understanding the effects of drug treatments.
+## Application Purpose
 
+The primary purpose of our Streamlit application is to provide researchers and analysts in the field of cell shape analysis with a user-friendly interface to calculate and visualize the elastic metric between discrete curves. The elastic metric is a mathematical measure that quantifies the similarity or dissimilarity between two curves based on their shape, allowing for meaningful comparisons and analysis of cell shapes.
+
+## Features
+
+The application offers the following key features:
+
+1. **Curve Upload:** Users can upload their own datasets containing discrete curves representing cell shapes. The application supports various file formats, including CSV, Excel, ROI from Fiji, and plain text.
+
+2. **Elastic Metric Calculation:** Once the curves are uploaded, the application calculates the elastic metric between all pairs of curves in the dataset. The elastic metric takes into account the shape, length, and orientation of the curves to provide a comprehensive measure of similarity.
+
+3. **Visualization:** The application provides interactive visualizations of the curves and their corresponding elastic metric values. Users can explore the curves, compare their shapes, and identify patterns or clusters within the dataset.
+
+4. **Data Export:** Users can export the computed elastic metric values along with the corresponding curve pairs for further analysis or integration with other tools.
+
+## Method - Elastic Metric from Geomstats
+
+The elastic metric used in our application is based on the mathematical framework provided by Geomstats, a Python package for computational geometry and statistics on manifolds. Geomstats offers a wide range of tools and algorithms for studying shapes, curves, and geometric structures.
+
+In the context of our application, the elastic metric is computed using the following steps:
+
+1. **Curve Preprocessing:** Before calculating the elastic metric, the uploaded curves undergo preprocessing steps such as resampling, smoothing, or noise reduction, as required by the specific analysis.
+
+2. **Tangent Space Alignment:** The curves are then aligned in a common tangent space to remove any differences in translation, rotation, and scale. This step ensures that the elastic metric focuses on the shape-related features rather than global transformations.
+
+3. **Geodesic Distances Calculation:** The geodesic distances between pairs of aligned curves are computed. Geodesic distances capture the length of the shortest path between two points on a manifold, in this case, the space of curves.
+
+4. **Elastic Metric Computation:** Finally, the elastic metric is calculated as a weighted sum of the geodesic distances, taking into account the shape, length, and orientation differences between the curves. This metric provides a meaningful measure of similarity or dissimilarity between the curves.
 
 
